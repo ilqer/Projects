@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form onsubmit="window.location.href='/analyze-bucket/'+document.getElementById('bucket').value; return false;">
+    <input type="text" id="bucket" placeholder="Enter bucket name" value="imagebuckettestforkobil1">
+    <button type="submit">Analyze Bucket</button>
+  </form>
+    <a href="{{url_for('home')}} ">Home</a>
+</body>
+</html>

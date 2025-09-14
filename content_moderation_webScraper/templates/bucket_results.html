@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bucket Analysis Results</title>
+</head>
+<body>
+    <h1>Analysis Results for Bucket: {{ bucket }}</h1>
+    {% for result in results %}
+        {{ result|safe }}
+    {% endfor %}
+</body>
+</html>
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Analyzer</title>
+</head>
+<body>
+    <h1>Website Image Analyzer</h1>
+    <form method="POST">
+        <input type="url" name="url" placeholder="Website URL" required value="https://www.haberler.com/">
+        <button type="submit">Analyze Website</button><br><br>
+    </form>
+    <label for="file">Processing Images:</label>
+    <progress id="file" value="0" max="100"> 0% </progress>
+
+    <br><br><a href="{{url_for('home')}}">Back to Home</a>
+    <ul id="item-list"></ul>
+
+    <script>
+        const itemList = document.getElementById('item-list');
+        let displayedItems = new Set();
+    async function updateProgress() {
+        const response = await fetch('/progress');
+        const data = await response.json();
+        const progressBar = document.getElementById('file');
+
+        const percentage = data.total > 0 ? Math.round((data.processed / data.total) * 100) : 0;
+        progressBar.value = percentage;
+        progressBar.textContent = percentage + '%';
+        data.flagged.forEach(item => {
+            const itemKey = item.url; // Use URL as unique identifier
+            if (!displayedItems.has(itemKey)) {
+              const li = document.createElement('li');
+              li.innerHTML = `${item.url} - Labels: ${item.labels.map(l => l.Name).join(', ')}`;
+              itemList.appendChild(li);
+              displayedItems.add(itemKey);
+            }
+      });
+
+
+    }
+    setInterval(updateProgress, 1000); // Fetch every 1 second
+  </script>
+
+</body>
+</html>
