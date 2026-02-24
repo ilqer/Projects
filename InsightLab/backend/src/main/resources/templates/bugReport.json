@@ -1,0 +1,45 @@
+{
+  "id": "bugReport",
+  "name": "Bug Report Analysis",
+  "description": "Single artifact JSON bug review task.",
+  "title": "Bug Report Evaluation",
+  "instructions": "Read the bug report and provide severity, reproducibility, and notes.",
+  "layoutMode": "SINGLE",
+  "allowHighlight": true,
+  "allowAnnotation": true,
+  "allowTagging": true,
+  "blindedMode": false,
+  "artifactReferences": [
+    { "id": "artifact-a", "displayLabel": "Bug Report", "displayOrder": 1, "blinded": false, "type": "JSON" }
+  ],
+  "criteria": [
+    {
+      "id": "bug-severity",
+      "type": "single-choice",
+      "name": "Severity",
+      "required": true,
+      "options": ["Critical", "Major", "Moderate", "Minor", "Trivial"]
+    },
+    {
+      "id": "bug-reproducible",
+      "type": "single-choice",
+      "name": "Is it reproducible?",
+      "required": true,
+      "options": ["Yes", "No", "Unclear"]
+    },
+    {
+      "id": "bug-category",
+      "type": "single-choice",
+      "name": "Category",
+      "required": false,
+      "options": ["UI", "Functional", "Performance", "Security", "Compatibility", "Other"]
+    },
+    {
+      "id": "bug-notes",
+      "type": "text",
+      "name": "Notes",
+      "required": false,
+      "placeholder": "Additional context..."
+    }
+  ]
+}

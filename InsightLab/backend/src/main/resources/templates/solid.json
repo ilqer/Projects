@@ -1,0 +1,53 @@
+{
+  "id": "solid",
+  "name": "SOLID Review",
+  "description": "Single artifact SOLID principle evaluation.",
+  "title": "SOLID Violation Review",
+  "instructions": "Review the provided code snippet and identify SOLID violations.",
+  "layoutMode": "SINGLE",
+  "allowHighlight": true,
+  "allowAnnotation": true,
+  "allowTagging": true,
+  "blindedMode": false,
+  "artifactReferences": [
+    { "id": "artifact-a", "displayLabel": "Code Snippet", "displayOrder": 1, "blinded": false, "type": "CODE" }
+  ],
+  "criteria": [
+    {
+      "id": "solid-principle",
+      "type": "single-choice",
+      "name": "Which principle is violated?",
+      "required": true,
+      "options": [
+        "SRP",
+        "OCP",
+        "LSP",
+        "ISP",
+        "DIP",
+        "None"
+      ]
+    },
+    {
+      "id": "solid-severity",
+      "type": "rating",
+      "name": "Severity",
+      "required": true,
+      "scaleMin": 1,
+      "scaleMax": 5
+    },
+    {
+      "id": "solid-explanation",
+      "type": "text",
+      "name": "Explain the violation",
+      "required": true,
+      "placeholder": "Describe why this is a violation..."
+    },
+    {
+      "id": "solid-fix",
+      "type": "text",
+      "name": "Suggested Fix",
+      "required": false,
+      "placeholder": "Optional fix recommendation"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "cloneType",
+  "name": "Clone Type Comparison",
+  "description": "Side-by-side clone comparison task.",
+  "title": "Clone Type Evaluation",
+  "instructions": "Compare the two code snippets and identify their relationship.",
+  "layoutMode": "SIDE_BY_SIDE",
+  "allowHighlight": true,
+  "allowAnnotation": true,
+  "allowTagging": false,
+  "blindedMode": true,
+  "artifactReferences": [
+    { "id": "artifact-a", "displayLabel": "Original Snippet", "displayOrder": 1, "blinded": true, "type": "CODE" },
+    { "id": "artifact-b", "displayLabel": "Candidate Snippet", "displayOrder": 2, "blinded": true, "type": "CODE" }
+  ],
+  "criteria": [
+    {
+      "id": "clone-relationship",
+      "type": "single-choice",
+      "name": "Clone Relationship",
+      "required": true,
+      "options": [
+        "Exact Copy",
+        "Renamed Copy",
+        "Restructured Copy",
+        "Different Implementation",
+        "No Relation"
+      ]
+    },
+    {
+      "id": "clone-similarity",
+      "type": "rating",
+      "name": "Similarity (0-100)",
+      "required": true,
+      "scaleMin": 0,
+      "scaleMax": 100
+    },
+    {
+      "id": "clone-notes",
+      "type": "text",
+      "name": "Notes",
+      "required": false,
+      "placeholder": "Optional notes..."
+    }
+  ]
+}

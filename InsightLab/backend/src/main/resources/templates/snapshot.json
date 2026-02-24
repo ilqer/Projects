@@ -1,0 +1,43 @@
+{
+  "id": "snapshot",
+  "name": "Snapshot Regression",
+  "description": "Three-way comparison of reference, failure, and diff images.",
+  "title": "Snapshot Regression Evaluation",
+  "instructions": "Inspect the provided images and determine if the difference represents a real regression.",
+  "layoutMode": "THREE_WAY",
+  "allowHighlight": false,
+  "allowAnnotation": false,
+  "allowTagging": false,
+  "blindedMode": true,
+  "artifactReferences": [
+    { "id": "artifact-a", "displayLabel": "Reference Image", "displayOrder": 1, "blinded": true, "type": "IMAGE" },
+    { "id": "artifact-b", "displayLabel": "Failure Image", "displayOrder": 2, "blinded": true, "type": "IMAGE" },
+    { "id": "artifact-c", "displayLabel": "Diff Image", "displayOrder": 3, "blinded": true, "type": "IMAGE" }
+  ],
+  "criteria": [
+    {
+      "id": "snapshot-real-bug",
+      "type": "yes-no",
+      "name": "Is this a real bug?",
+      "description": "Determine if the failure screenshot represents a legitimate bug.",
+      "required": true
+    },
+    {
+      "id": "snapshot-confidence",
+      "type": "rating",
+      "name": "Confidence",
+      "description": "How confident are you in your decision?",
+      "required": true,
+      "scaleMin": 1,
+      "scaleMax": 5
+    },
+    {
+      "id": "snapshot-explanation",
+      "type": "text",
+      "name": "Explain your reasoning",
+      "description": "Provide a short explanation.",
+      "required": false,
+      "placeholder": "Optional explanation..."
+    }
+  ]
+}

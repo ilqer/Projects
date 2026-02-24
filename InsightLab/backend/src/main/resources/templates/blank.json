@@ -1,0 +1,31 @@
+{
+  "id": "blank",
+  "name": "Blank Task",
+  "description": "Start from scratch with a single artifact and no predefined criteria.",
+  "title": "Custom Evaluation Task",
+  "instructions": "Provide your analysis for each artifact and complete the criteria below.",
+  "layoutMode": "SINGLE",
+  "allowHighlight": true,
+  "allowAnnotation": true,
+  "allowTagging": false,
+  "blindedMode": false,
+  "artifactReferences": [
+    {
+      "id": "artifact-1",
+      "displayLabel": "Artifact",
+      "displayOrder": 1,
+      "blinded": false,
+      "type": "FILE"
+    }
+  ],
+  "criteria": [
+    {
+      "id": "notes",
+      "type": "text",
+      "name": "Notes",
+      "description": "Provide any notes or observations.",
+      "required": false,
+      "placeholder": "Type your notes here..."
+    }
+  ]
+}
